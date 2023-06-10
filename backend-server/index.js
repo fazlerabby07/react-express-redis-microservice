@@ -117,4 +117,18 @@ app.get('/data', async (_, res) => {
     }
 });
 
+app.post('/create', async (req, res) => {
+    const { data } = req.body;
+    try {
+        if (!data) throw new Error('missing data');
+        const subscriberCount = await publishToRedis(data);
+        console.log({ subscriberCount });
+        const test = await deleteRedisCache();
+        res.status(200).json({ message: 'success' });
+    } catch (error) {
+        console.log({ error });
+        res.status(500).json({ message: 'failure', error });
+    }
+});
+
 app.listen(port, () => console.log(`served on port ${port}`));
