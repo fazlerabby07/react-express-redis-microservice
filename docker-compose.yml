@@ -43,6 +43,19 @@ services:
       - database
       - redis
     
+  fontend-server:
+    container_name: "fontend-server"
+    build: ./fontend-server/.
+    ports:
+      - '4000:4000'
+    networks:
+      - mynetwork
+    depends_on:
+      - redis
+      - database
+      - backend-server
+      - worker-server
+
   database:
     container_name: "mysql-database"
     build: ./database/.
