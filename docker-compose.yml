@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  backend-server:
+    container_name: "backend-server"
+    build: ./backend-server/.
+    environment:
+      - PORT=4001
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USERNAME=${MYSQL_USERNAME}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_TABLE=${MYSQL_TABLE}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_CHANNEL=${REDIS_CHANNEL}
+    ports:
+      - '4001:4001'
+    networks:
+      - mynetwork
+    depends_on:
+      - database
+      - redis
+    
+  database:
+    container_name: "mysql-database"
+    build: ./database/.
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - mynetwork
+
+  redis:
+    container_name: "redis"
+    image: "redis:latest"
+    restart: always
+    command: redis-server --save 20 1 --loglevel warning --requirepass radisPassword
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
