@@ -8,8 +8,8 @@ A simple project to demonstrate microservice architecture
 
 #### System Requirements (Dev):
 
--   Docker (v18+)
--   Docker Compose (1.22+)
+-   Docker (v20+)
+-   Docker Compose (2+)
 -   A real Development computer (Running Linux or Mac)
 
 #### Folder Architecture
