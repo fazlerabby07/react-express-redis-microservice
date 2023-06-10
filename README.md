@@ -4,7 +4,7 @@ A simple project to demonstrate microservice architecture
 
 #### System Design
 
-![alt text](https://github.com/fazlerabby07/virtual-classroom/blob/master/system-design.png?raw=true)
+![alt text](https://github.com/fazlerabby07/react-express-redis-microservice/system-design.png?raw=true)
 
 #### System Requirements (Dev):
 
@@ -28,4 +28,4 @@ Use `docker-compose up --build` build and run the project locally with port `400
 
 After running the project go to `http://localhost:4000` from the browser.
 From the browser you can create and get data
-![alt text](https://github.com/fazlerabby07/virtual-classroom/blob/master/ui.png?raw=true)
+![alt text](https://github.com/fazlerabby07/react-express-redis-microservice/ui.png?raw=true)
