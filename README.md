@@ -31,6 +31,6 @@ From the browser you can create and get data
 
 ![alt text](https://github.com/fazlerabby07/react-express-redis-microservice/blob/master/ui.png?raw=true)
 
-Demo video
+Demo
 
 ![alt text](https://github.com/fazlerabby07/react-express-redis-microservice/blob/master/demo.gif?raw=true)
