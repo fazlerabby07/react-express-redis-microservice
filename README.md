@@ -33,4 +33,4 @@ From the browser you can create and get data
 
 Demo video
 
-![alt text](https://github.com/fazlerabby07/react-express-redis-microservice/blob/master/demo.mov?raw=true)
+![alt text](https://github.com/fazlerabby07/react-express-redis-microservice/blob/master/demo.gif?raw=true)
